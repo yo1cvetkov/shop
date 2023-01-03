@@ -1,5 +1,6 @@
 import items from "./items.json";
 import { addToCart } from "./shoppingCart";
+import { addToCart } from "./shoppingCart";
 import formatCurrency from "./utils/formatCurrency.js";
 
 const IMG_URL = "https://dummyimage.com/420x260";
