@@ -10,8 +10,8 @@ const storeContainer = document.querySelector("[data-store-container]");
 export default function storeRender() {
   document.addEventListener("click", (e) => {
     if (e.target.matches("[data-add-to-cart-button]")) {
-      const id = e.target.closest("[data-store-item]");
-      addToCart(id);
+      const id = e.target.closest("[data-store-item]").dataset.itemId;
+      addToCart(parseInt(id));
     }
   });
 
