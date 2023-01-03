@@ -1,4 +1,5 @@
 import items from "./items.json";
+import { addToCart } from "./shoppingCart";
 import formatCurrency from "./utils/formatCurrency.js";
 
 const IMG_URL = "https://dummyimage.com/420x260";
@@ -7,6 +8,13 @@ const storeTemplate = document.querySelector("#store-item-template");
 const storeContainer = document.querySelector("[data-store-container]");
 
 export default function storeRender() {
+  document.addEventListener("click", (e) => {
+    if (e.target.matches("[data-add-to-cart-button]")) {
+      const id = e.target.closest("[data-store-item]");
+      addToCart(id);
+    }
+  });
+
   items.forEach(renderItem);
 }
 
